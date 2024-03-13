@@ -24,7 +24,7 @@ function isNumeric(value) {
 function miWhatsapp() {
 
   let text;
-  let movil = prompt("Ingrese móvil (569XXXXXXXX):", "XXXXXXXXXXX");
+  let movil = prompt("Ingrese móvil (569XXXXXXXX):", "");
   if (isNumeric(movil)) {
     text = movil;
     location.replace("https://api.whatsapp.com/send?phone=" + movil)
