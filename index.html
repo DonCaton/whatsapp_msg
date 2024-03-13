@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body onload="miBoton()">
+
+<button id="miWhatsapp" onclick="miWhatsapp()">Enviar Mensaje Whatsapp</button>
+
+<p id="mensaje"></p>
+
+<script>
+function miBoton() {
+    var miBoton = document.getElementById('miWhatsapp');
+    miBoton.style.height = '200px';
+    miBoton.style.width= '200px';
+    miBoton.style.fontSize = '20px';
+    miBoton.style.backgroundColor = 'green';
+    miBoton.style.color = 'white';
+}   
+
+function isNumeric(value) {
+    return /^\d+$/.test(value);
+}
+
+function miWhatsapp() {
+
+  let text;
+  let movil = prompt("Ingrese número móvil al que enviará mensaje (569XXXXXXXX):", "XXXXXXXXXXX");
+  if (isNumeric(movil)) {
+    text = movil;
+    location.replace("https://api.whatsapp.com/send?phone=" + movil)
+  } else {
+    text = "Número móvil no válido: " + movil;
+  }
+    document.getElementById("mensaje").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
