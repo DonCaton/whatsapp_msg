@@ -37,25 +37,7 @@
     <div><button type="button" id="miBoton" onclick="miWhatsapp()">Enviar Whatsapp!</button></div>
     <div id="mensaje"></div>
   </div>
-
-  <script>
-    function isNumeric(value) {
-        return /^\d+$/.test(value);
-    }
-
-    function miWhatsapp() {
-
-      let text;
-      let movil = document.getElementById("numMovil").value;
-      if (isNumeric(movil)) {
-        text = movil;
-        location.assign("https://api.whatsapp.com/send?phone=" + movil)
-      } else {
-        text = "Móvil inválido: " + movil;
-      }
-        document.getElementById("mensaje").innerHTML = "Ultimo: " + text;
-    }
-  </script>
+  <script type="text/javascript" src="./js/whatsapp_msg.js"></script>
   <script type="text/javascript" src="https://counter11.optistats.ovh/private/counter.js?c=fte9lj2txwak8kadff3krgrqsdh2mgjb&down=async" async></script>
   <noscript><a href="https://www.freecounterstat.com" title="free website counter"><img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=fte9lj2txwak8kadff3krgrqsdh2mgjb" border="0" title="free website counter" alt="free website counter"></a></noscript>
 </body>
