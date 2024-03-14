@@ -1,0 +1,28 @@
+#titulo {
+    font-size: 5vw;
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  #numMovil {
+    height: 5vw;
+    width: 34vw;
+    font-size: 5vw;
+    background-color: darkgray;
+    color: white;
+    letter-spacing: -1px;
+  }
+  
+  #miBoton {
+    height: 6vw;
+    width: 35vw;
+    font-size: 4vw;
+    background-color: #25D366;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  #mensaje {
+    font-size: 2vw;
+  }
