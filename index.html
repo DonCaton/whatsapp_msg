@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
-<body onload="miBoton()">
+<body onload="miEstilo()">
 
-<button id="miWhatsapp" onclick="miWhatsapp()">Enviar Mensaje Whatsapp</button>
-
+<p id="titulo" align="center">Número Móvil:</p>
+<form align="center" action="">
+  <input type="text" id="numMovil" name="numMovil" min="1000000000" max="99999999999">
+</br>
+  <button type="button" id="miBoton" onclick="miWhatsapp()">Enviar Whatsapp!</button>
+</form>
 <p id="mensaje"></p>
 
 <script>
-function miBoton() {
-    var miBoton = document.getElementById('miWhatsapp');
-    miBoton.style.height = '200px';
-    miBoton.style.width= '200px';
-    miBoton.style.fontSize = '20px';
-    miBoton.style.backgroundColor = 'green';
-    miBoton.style.color = 'white';
-    miWhatsapp()
+function miEstilo() {
+    
+  var miMovil = document.getElementById('numMovil');
+  numMovil.style.height = '30px';
+  numMovil.style.width= '125px';
+  numMovil.style.fontSize = '20px';
+  numMovil.style.backgroundColor = 'darkgray';
+  numMovil.style.color = 'white';
+
+  var miBoton = document.getElementById('miBoton');
+  miBoton.style.height = '50px';
+  miBoton.style.width= '135px';
+  miBoton.style.backgroundColor = '#25D366';
+  miBoton.style.color = 'white';
+  miBoton.style.borderRadius = '10px';
+
 }   
 
 function isNumeric(value) {
@@ -24,7 +36,7 @@ function isNumeric(value) {
 function miWhatsapp() {
 
   let text;
-  let movil = prompt("Ingrese móvil (569XXXXXXXX):", "");
+  let movil = document.getElementById("numMovil").value;
   if (isNumeric(movil)) {
     text = movil;
     location.replace("https://api.whatsapp.com/send?phone=" + movil)
