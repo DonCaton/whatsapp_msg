@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Papagallo Whatsapp</title>
+    <meta name="description" content="Papagallo Whatsapp">
+    <meta name="author" content="Papagallo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta property='og:title' content='Papagallo'/>
+    <meta property='og:image' content='/img/logo_thumbnail.png'/>
+    <meta property='og:url' content='https://doncaton.github.io/whatsapp_msg/'/>
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='627' />    
+
+    <link rel="icon" type="image/png" href="./img/favicon.ico">
+
   </head>
 <body onload="miEstilo()">
   <div align="center">
@@ -31,12 +44,15 @@
       numMovil.style.letterSpacing = '-1px';
 
       var miBoton = document.getElementById('miBoton');
-      miBoton.style.height = '6vwpx';
+      miBoton.style.height = '6vw';
       miBoton.style.width= '35vw';
       miBoton.style.fontSize = '4vw';
       miBoton.style.backgroundColor = '#25D366';
       miBoton.style.color = 'white';
       miBoton.style.borderRadius = '10px';
+
+      var miMensaje = document.getElementById('mensaje');
+      miMensaje.style.fontSize = '2vw';
 
     }   
 
@@ -52,7 +68,7 @@
         text = movil;
         location.assign("https://api.whatsapp.com/send?phone=" + movil)
       } else {
-        text = "Número móvil no válido: " + movil;
+        text = "Móvil inválido: " + movil;
       }
         document.getElementById("mensaje").innerHTML = "Ultimo: " + text;
     }
