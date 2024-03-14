@@ -4,53 +4,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 <body onload="miEstilo()">
-  <p id="titulo" align="center">Número Móvil:</p>
-  <form align="center" action="">
-    <input type="text" value="569XXXXXXXX" onfocus="this.value=''" id="numMovil" name="numMovil" min="1000000000" max="99999999999">
-  </br>
-    <button type="button" id="miBoton" onclick="miWhatsapp()">Enviar Whatsapp!</button>
-  </form>
-  <p id="mensaje"></p>
+  <div align="center">
+    <div></br></div>
+    <div id="titulo">Número Móvil:</div>
+    <div><input type="text" value="569XXXXXXXX" onfocus="this.value=''" id="numMovil" name="numMovil" min="1000000000" max="99999999999"></div>
+    <div></br></div>
+    <div><button type="button" id="miBoton" onclick="miWhatsapp()">Enviar Whatsapp!</button></div>
+    <div id="mensaje"></div>
+  </div>
 
   <script>
-  function miEstilo() {
+    function miEstilo() {
 
-    var miTitulo = document.getElementById('titulo');
-    miTitulo.style.fontSize = '5vw';
-      
-    var miMovil = document.getElementById('numMovil');
-    numMovil.style.height = '6vw';
-    numMovil.style.width= '33vw';
-    numMovil.style.fontSize = '5vw';
-    numMovil.style.backgroundColor = 'darkgray';
-    numMovil.style.color = 'white';
+      var miTitulo = document.getElementById('titulo');
+      miTitulo.style.fontSize = '4vw';
+        
+      var miMovil = document.getElementById('numMovil');
+      numMovil.style.height = '5vw';
+      numMovil.style.width= '34vw';
+      numMovil.style.fontSize = '5vw';
+      numMovil.style.backgroundColor = 'darkgray';
+      numMovil.style.color = 'white';
 
-    var miBoton = document.getElementById('miBoton');
-    miBoton.style.height = '6vwpx';
-    miBoton.style.width= '34vw';
-    miBoton.style.fontSize = '4vw';
-    miBoton.style.backgroundColor = '#25D366';
-    miBoton.style.color = 'white';
-    miBoton.style.borderRadius = '10px';
+      var miBoton = document.getElementById('miBoton');
+      miBoton.style.height = '6vwpx';
+      miBoton.style.width= '35vw';
+      miBoton.style.fontSize = '4vw';
+      miBoton.style.backgroundColor = '#25D366';
+      miBoton.style.color = 'white';
+      miBoton.style.borderRadius = '10px';
 
-  }   
+    }   
 
-  function isNumeric(value) {
-      return /^\d+$/.test(value);
-  }
-
-  function miWhatsapp() {
-
-    let text;
-    let movil = document.getElementById("numMovil").value;
-    if (isNumeric(movil)) {
-      text = movil;
-      location.assign("https://api.whatsapp.com/send?phone=" + movil)
-    } else {
-      text = "Número móvil no válido: " + movil;
+    function isNumeric(value) {
+        return /^\d+$/.test(value);
     }
-      document.getElementById("mensaje").innerHTML = text;
-  }
+
+    function miWhatsapp() {
+
+      let text;
+      let movil = document.getElementById("numMovil").value;
+      if (isNumeric(movil)) {
+        text = movil;
+        location.assign("https://api.whatsapp.com/send?phone=" + movil)
+      } else {
+        text = "Número móvil no válido: " + movil;
+      }
+        document.getElementById("mensaje").innerHTML = text;
+    }
   </script>
 
 </body>
