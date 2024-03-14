@@ -22,8 +22,7 @@
   </head>
 <body onload="miEstilo()">
   <div align="center">
-    <div></br></div>
-    <div id="titulo">Número Móvil:</div>
+    <div><h1 id="titulo">Número Móvil:</h1></div>
     <div><input type="text" value="569XXXXXXXX" onfocus="this.value=''" id="numMovil" name="numMovil" min="1000000000" max="99999999999"></div>
     <div></br></div>
     <div><button type="button" id="miBoton" onclick="miWhatsapp()">Enviar Whatsapp!</button></div>
@@ -37,7 +36,7 @@
       miTitulo.style.fontSize = '4vw';
       miTitulo.style.fontfamily = 'Helvetica Neue';
       miTitulo.style.fontweight = 'bold';
-      miTitulo.style.lineHeight = '2';
+      miTitulo.style.lineHeight = '1';
       
       var miMovil = document.getElementById('numMovil');
       numMovil.style.height = '5vw';
